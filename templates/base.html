@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!--<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>-->
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+                <a href="{{url_for('get_recipes')}}" class="brand-logo" Style="margin-left: 10px;">NaijaRecipes</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
+                    <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
+                    <li><a href="{{url_for('add_recipes')}}">Add Recipe</a></li>
+                    <li><a href="{{url_for('get_recipes')}}">Log In</a></li>
+                    <li><a href="{{url_for('get_recipes')}}">Sign Up</a></li>
+                </ul>
+                <ul class="side-nav " id="mobile-demo">
+                    <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
+                    <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
+                    <li><a href="{{url_for('add_recipes')}}">Add Recipe</a></li>
+                    <li><a href="{{url_for('get_recipes')}}">Log In</a></li>
+                    <li><a href="{{url_for('get_recipes')}}">Sign Up</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container " style = "text-align: center;">
+        <div class="nav-content ">
+            <ul class="tabs ">
+                <li class="tab"><a href="{{url_for('get_categories')}}" >Appetizer</a></li>
+                <li class="tab"><a href="#test2">Dessert</a></li>
+                <li class="tab"><a href="#test3">Lunch</a></li>
+                <li class="tab"><a href="#test4">Main Dish</a></li>
+                <li class="tab"><a href="#test4">Side Dish</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slider grey darken-4">
+        <ul class="slides ">
+            <li>
+                <img src="/static/images/food.jpg">
+                <!-- random image -->
+                <div class="caption center-align">
+                    <h3>Welcome to Naija Recipes</h3>
+                    <h5 class="light grey-text text-lighten-3">Browse through our Tasty Recipes.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="/static/images/food2.jpg">
+                <!-- random image -->
+                <div class="caption left-align">
+                    <h3>Submit Recipes</h3>
+                    <h5 class="light grey-text text-lighten-3">Easily share your own recipe on our site.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="/static/images/food3.jpg">
+                <!-- random image -->
+                <div class="caption right-align">
+                    <h3>Edit Recipes</h3>
+                    <h5 class="light grey-text text-lighten-3">Update your recipes on our site.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="/static/images/food4.jpg">
+                <!-- random image -->
+                <div class="caption center-align">
+                    <h3>Delete Recipes</h3>
+                    <h5 class="light grey-text text-lighten-3">Also delete recipes you no longer want.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="/static/images/food5.jpg">
+                <!-- random image -->
+                <div class="caption center-align">
+                    <h3>Happy Sharing</h3>
+                    <h5 class="light grey-text text-lighten-3">Have a wonderful time .</h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+
+    <footer class="page-footer grey darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">NaijaRecipes</h5>
+                    <p class="grey-text text-lighten-4">Easily add-in a short description about your recipe! This can be of any length. Remember, you are trying to sell your recipe!.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Recipe Categories</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Appetizer</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Dessert</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Lunch</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Main Dish</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Side Dish</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright" style = "text-align: center;">
+            <div class="container">
+                © 2019 All Rights Reserved. Developed by TGIStudios
+                
+                <ul>
+    
+                <a target="_blank" href="https://www.facebook.com/caleb.rex.96"><i class = " fa fa-facebook" aria-hidden="true"></i><span class = "sr-only">Facebook</span></a>
+
+
+                <a target="_blank" href="https://twitter.com/calebrex01"><i class = " fa fa-twitter" aria-hidden="true"></i><span class = "sr-only">Twitter</span></a>
+
+
+                <a target="_blank" href="https://www.instagram.com/caleb.rex01/"><i class = " fa fa-instagram" aria-hidden="true"></i><span class = "sr-only">Instagram</span></a>
+
+                <a target="_blank" href="https://www.youtube.com/channel/UC_B7e65upco510Sio9dZJhg"><i class = " fa fa-youtube" aria-hidden="true"></i><span class = "sr-only">Youtube</span></a>
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.collapsible').collapsible();
+            $('select').material_select();
+            $(".button-collapse").sideNav();
+            $('.slider').slider();
+            $(".dropdown-button").dropdown();
+        });
+
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false // Close upon selecting a date,
+        });
+    </script>
+</body>
+
+</html>

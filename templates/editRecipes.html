@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% block content %}
+<h3>Edit recipes</h3>
+<hr>
+<div class="row" Style="padding: 20px;">
+
+    <h4 Style="padding: 10px;">Your Information</h4>
+    <form action="{{url_for('update_recipes', recipes_id=recipe._id)}}" method="POST" class="col s12">
+
+        <!-- Recipe type input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">poll</i>
+                <select id="category" name="category_name">
+                  <option value="" disabled selected>Choose Category</option>
+                      {% for cat in categories %}
+                      {% if cat.category_name == recipe.category_name %}
+                      <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+                      {% else %}
+                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                      {% endif %}
+                  {% endfor %}
+                </select>
+                <label>Recipe Category</label>
+            </div>
+        </div>
+
+        <!-- Recipe title input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="recipe_title" name="recipe_title" type="text" value="{{recipe.recipe_title}}">
+                <label for="icon_prefix">Recipe Title</label>
+            </div>
+        </div>
+
+        <!-- Prep Time input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="prep_time" name="prep_time" type="text" value="{{recipe.prep_time}}">
+                <label for="icon_prefix">Prep Time</label>
+
+            </div>
+        </div>
+
+        <!-- Cook Time input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="cook_time" name="cook_time" type="text" value="{{recipe.cook_time}}">
+                <label for="icon_prefix">Cook Time</label>
+            </div>
+        </div>
+
+        <!-- Number of Servings input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="number_of_servings" name="number_of_servings" type="text" value="{{recipe.number_of_servings}}">
+                <label for="icon_prefix">Number of Servings</label>
+            </div>
+        </div>
+
+        <!-- Ingredients input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">subject</i>
+                <textarea name="ingredients" id="ingredients" class="materialize-textarea">{{recipe.ingredients}}</textarea>
+                <label for="icon_telephone">Ingredients</label>
+            </div>
+        </div>
+
+        <!-- Instructions input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">subject</i>
+                <textarea name="instructions" id="instructions" class="materialize-textarea">{{recipe.instructions}}</textarea>
+                <label for="icon_telephone">Instructions</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Edit Task
+                <i class="material-icons right">create</i>
+             </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

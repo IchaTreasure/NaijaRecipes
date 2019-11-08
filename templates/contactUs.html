@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+<h3>Contact Us</h3>
+<hr>
+<div class="container" Style="padding-top: 20px">
+    <div class="row">
+        <div class="col-md-6">
+            <form action="mailto:treasureicha82@gmail.com" method="post" enctype="text/plain">
+                <ul class="form-style-1">
+                    <li>
+                        <label>Full Name <span class="required">*</span></label>
+                        <input type="text" name="firstname" class="field-divided" placeholder="First" />
+                        <input type="text" name="lastname" class="field-divided" placeholder="Last" />
+                    </li>
+                    <li>
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" name="email" class="field-long" />
+                    </li>
+                    <li>
+                        <label>Your Message <span class="required">*</span></label>
+                        <textarea name="message" id="message" class="field-long field-textarea"></textarea>
+                    </li>
+                    <li>
+                        <a href="" class="waves-effect waves-light btn btn_small grey darken-4" Style="margin-top: 30px;"><i class="material-icons right">send</i>Submit</a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

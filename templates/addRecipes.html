@@ -1,0 +1,110 @@
+{% extends 'base.html' %} {% block content %}
+<h3>Add recipes</h3>
+<hr>
+<div class="row" Style="padding: 20px;">
+
+    <h4 Style="padding: 10px;">Your Information</h4>
+    <form action="{{ url_for('insert_recipes') }}" method="POST" class="col s12">
+
+        <!-- Recipe type input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">poll</i>
+                <select id="category" name="category_name">
+                  <option value="" disabled selected>Choose Category</option>
+                      {% for cat in categories %}
+                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                  {% endfor %}
+                </select>
+                <label>Recipe Category</label>
+            </div>
+        </div>
+
+        <!-- Recipe title input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="recipe_title" name="recipe_title" type="text">
+                <label for="icon_prefix">Recipe Title</label>
+            </div>
+        </div>
+
+        <!-- Prep Time input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="prep_time" name="prep_time" type="text">
+                <label for="icon_prefix">Prep Time</label>
+
+            </div>
+        </div>
+
+        <!-- Cook Time input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="cook_time" name="cook_time" type="text">
+                <label for="icon_prefix">Cook Time</label>
+            </div>
+        </div>
+
+        <!-- Number of Servings input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="number_of_servings" name="number_of_servings" type="text">
+                <label for="icon_prefix">Number of Servings</label>
+            </div>
+        </div>
+
+        <!-- Ingredients input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">subject</i>
+                <textarea name="ingredients" id="ingredients" class="materialize-textarea"></textarea>
+                <label for="icon_telephone">Ingredients</label>
+            </div>
+        </div>
+
+        <!-- Instructions input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">subject</i>
+                <textarea name="instructions" id="instructions" class="materialize-textarea"></textarea>
+                <label for="icon_telephone">Instructions</label>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="file-field input-field col s12">
+                <div class="btn grey darken-4">
+                    <span>File</span>
+                    <input id="food_pic" name="food_pic" type="file">
+                </div>
+                <div class="file-path-wrapper">
+                    <input id="food_pic" name="food_pic" class="file-path validate" type="text">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Upload Image for recipe -->
+        <div class="mb-5 col-8">
+            <img src="https://www.industriehof.com/images/social/xing-24x24.png" id="img-preview" />
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="food_pic">
+                <label class="custom-file-label" for="recipe_image">Choose image</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <button class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Add Recipe
+                <i class="material-icons right">add</i>
+             </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

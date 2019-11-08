@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="row">
+
+    <div class="col s9" Style="padding: 50px;">
+        <div>
+            <h4>{{recipe.recipe_title}}</h4>
+        </div>
+        <br>
+        <div>
+            <span> <strong>Prep Time: </strong> {{recipe.prep_time}}</span>
+        </div>
+        <br>
+        <div>
+            <span> <strong>Cook Time: </strong> {{recipe.cook_time}}</span>
+        </div>
+        <br>
+        <div>
+            <span> <strong>Number of Serving: </strong> {{recipe.number_of_servings}}</span>
+        </div>
+        <br>
+        <div>
+            <span> <strong>Ingredients: </strong> {{recipe.ingredients}}</span>
+        </div>
+        <br>
+        <div>
+            <span> <strong>Instructions: </strong> {{recipe.instructions}}</span>
+        </div>
+        <br>
+        <div>
+            <span> <strong>Instructions: </strong> {{recipe.food_pic}}</span>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
