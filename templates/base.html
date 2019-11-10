@@ -19,28 +19,39 @@
                     <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
                     <li><a href="{{url_for('add_recipes')}}">Add Recipe</a></li>
                     <li><a href="{{url_for('get_recipes')}}">Log In</a></li>
-                    <li><a href="{{url_for('get_recipes')}}">Sign Up</a></li>
+                    <li><a href="{{url_for('search_recipes')}}">Sign Up</a></li>
                 </ul>
                 <ul class="side-nav " id="mobile-demo">
                     <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
                     <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
                     <li><a href="{{url_for('add_recipes')}}">Add Recipe</a></li>
                     <li><a href="{{url_for('get_recipes')}}">Log In</a></li>
-                    <li><a href="{{url_for('get_recipes')}}">Sign Up</a></li>
+                    <li><a href="{{url_for('search_recipes')}}">Sign Up</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <div class="container " style = "text-align: center;">
+    <div class="container " style="text-align: center;">
         <div class="nav-content ">
             <ul class="tabs ">
-                <li class="tab"><a href="{{url_for('get_categories')}}" >Appetizer</a></li>
+                <li class="tab"><a href="{{url_for('get_categories')}}">Appetizer</a></li>
                 <li class="tab"><a href="#test2">Dessert</a></li>
                 <li class="tab"><a href="#test3">Lunch</a></li>
                 <li class="tab"><a href="#test4">Main Dish</a></li>
                 <li class="tab"><a href="#test4">Side Dish</a></li>
             </ul>
+        </div>
+        <div class="container " style="text-align: center;">
+            <div class="row">
+                <div class="input-field col s3">
+                    <i class="material-icons prefix">assignment</i>
+                    <input id="browse_recipes" name="browse_recipes" type="text">
+                    <label for="icon_prefix">Browse Recipes</label>
+                    <a href="{{url_for('search_recipes')}}">Search</a></li>
+                </div>
+                
+            </div>
         </div>
     </div>
 
@@ -89,7 +100,6 @@
         </ul>
     </div>
 
-
     <div class="container">
         {% block content %} {% endblock %}
     </div>
@@ -113,21 +123,21 @@
                 </div>
             </div>
         </div>
-        <div class="footer-copyright" style = "text-align: center;">
+        <div class="footer-copyright" style="text-align: center;">
             <div class="container">
                 © 2019 All Rights Reserved. Developed by TGIStudios
-                
+
                 <ul>
-    
-                <a target="_blank" href="https://www.facebook.com/caleb.rex.96"><i class = " fa fa-facebook" aria-hidden="true"></i><span class = "sr-only">Facebook</span></a>
+
+                    <a target="_blank" href="https://www.facebook.com/caleb.rex.96"><i class = " fa fa-facebook" aria-hidden="true"></i><span class = "sr-only">Facebook</span></a>
 
 
-                <a target="_blank" href="https://twitter.com/calebrex01"><i class = " fa fa-twitter" aria-hidden="true"></i><span class = "sr-only">Twitter</span></a>
+                    <a target="_blank" href="https://twitter.com/calebrex01"><i class = " fa fa-twitter" aria-hidden="true"></i><span class = "sr-only">Twitter</span></a>
 
 
-                <a target="_blank" href="https://www.instagram.com/caleb.rex01/"><i class = " fa fa-instagram" aria-hidden="true"></i><span class = "sr-only">Instagram</span></a>
+                    <a target="_blank" href="https://www.instagram.com/caleb.rex01/"><i class = " fa fa-instagram" aria-hidden="true"></i><span class = "sr-only">Instagram</span></a>
 
-                <a target="_blank" href="https://www.youtube.com/channel/UC_B7e65upco510Sio9dZJhg"><i class = " fa fa-youtube" aria-hidden="true"></i><span class = "sr-only">Youtube</span></a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UC_B7e65upco510Sio9dZJhg"><i class = " fa fa-youtube" aria-hidden="true"></i><span class = "sr-only">Youtube</span></a>
 
                 </ul>
             </div>

@@ -77,6 +77,10 @@ def get_categories():
     return render_template('categories.html',
                            Recipies=mongo.db.Recipies.find())
 
+@app.route('/search_recipes')
+def search_recipes():
+    return render_template("searchRecipes.html", Recipies=mongo.db.Recipies.find({"recipe_title": "Jollof Rice"}))
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
