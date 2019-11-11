@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
+import bcrypt 
 from bson.objectid import ObjectId
 
 from dotenv import load_dotenv
@@ -77,11 +78,12 @@ def get_categories():
     return render_template('categories.html',
                            Recipies=mongo.db.Recipies.find())
 
-@app.route('/search_recipes')
+@app.route('/search_recipes', methods=['GET'])
 def search_recipes():
-    return render_template("searchRecipes.html", Recipies=mongo.db.Recipies.find({"recipe_title": "Jollof Rice"}))
+    return render_template("searchRecipes.html", Recipies=mongo.db.Recipies.find_one({'recipe_title': request.form['browse_recipes']}))
 
 if __name__ == '__main__':
+    app.secret_key = 'mysecret'
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)

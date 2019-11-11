@@ -42,17 +42,19 @@
                 <li class="tab"><a href="#test4">Side Dish</a></li>
             </ul>
         </div>
+        <form method=GET action="{{ url_for('search_recipes') }}">
         <div class="container " style="text-align: center;">
             <div class="row">
                 <div class="input-field col s3">
                     <i class="material-icons prefix">assignment</i>
                     <input id="browse_recipes" name="browse_recipes" type="text">
                     <label for="icon_prefix">Browse Recipes</label>
-                    <a href="{{url_for('search_recipes')}}">Search</a></li>
+                    <button type="submit" class="btn btn-primary btn-block">Search</button>
                 </div>
                 
             </div>
         </div>
+        </form>
     </div>
 
     <div class="slider grey darken-4">
