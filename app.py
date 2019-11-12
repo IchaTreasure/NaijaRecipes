@@ -130,12 +130,14 @@ def contact_Us():
 
 @app.route('/get_categories')
 def get_categories():
+    
     return render_template('categories.html',
                            Recipies=mongo.db.Recipies.find())
 
 
 @app.route('/view_appetizer')
 def view_appetizer():
+    
     return render_template('appetizer.html',
                            Recipies=mongo.db.Recipies.find
                            ({'category_name': 'Appetizer'}))
@@ -143,6 +145,7 @@ def view_appetizer():
 
 @app.route('/view_dessert')
 def view_dessert():
+    
     return render_template('dessert.html',
                            Recipies=mongo.db.Recipies.find
                            ({'category_name': 'Dessert'}))
