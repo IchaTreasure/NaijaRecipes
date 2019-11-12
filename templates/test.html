@@ -46,20 +46,35 @@
 
 
 
-@app.route('/view_recipes/<recipes_id>', methods=["GET"])
-def view_recipes(recipes_id):
-    the_recipes =  mongo.db.Recipies.find_one({"_id": ObjectId(recipes_id)})
-    return render_template('viewRecipes.html', recipe=the_recipes)
+@app.route('/view_recipes/
+<recipes_id>', methods=["GET"]) def view_recipes(recipes_id): the_recipes = mongo.db.Recipies.find_one({"_id": ObjectId(recipes_id)}) return render_template('viewRecipes.html', recipe=the_recipes)
+
+
+
+
+    <form method=POST action="{{ url_for('search_recipes') }}">
+        <div class="container " style="text-align: center;">
+            <div class="row">
+                <div class="input-field col s3">
+                    <i class="material-icons prefix">assignment</i>
+                    <input id="browse_recipes" name="browse_recipes" type="text">
+                    <label for="icon_prefix">Browse Recipes</label>
+                    <button type="submit" class="btn btn-primary btn-block">Search</button>
+                </div>
+            </div>
+        </div>
+    </form>
 
 
 
 
 
-<!-- edit recipe html -->
-<div class="row">
-    <div class="input-field col s12">
-        <i class="material-icons prefix">poll</i>
-        <select id="category" name="category_name">
+
+    <!-- edit recipe html -->
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">poll</i>
+            <select id="category" name="category_name">
                   <option value="" disabled selected>Choose Category</option>
                   {% for cat in categories %}
                       {% if cat.category_name == recipe.category_name %}
@@ -69,36 +84,36 @@ def view_recipes(recipes_id):
                       {% endif %}
                   {% endfor %}
                 </select>
-        <label>Task Category</label>
+            <label>Task Category</label>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="input-field col s12">
-        <i class="material-icons prefix">assignment</i>
-        <input id="task_name" name="task_name" type="text" value="{{recipe.task_name}}">
-        <label for="icon_prefix">Task Name</label>
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input id="task_name" name="task_name" type="text" value="{{recipe.task_name}}">
+            <label for="icon_prefix">Task Name</label>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="input-field col s12">
-        <i class="material-icons prefix">subject</i>
-        <textarea name="task_description" id="task_description" class="materialize-textarea">{{recipe.task_description}}</textarea>
-        <label for="icon_telephone">Task Description</label>
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">subject</i>
+            <textarea name="task_description" id="task_description" class="materialize-textarea">{{recipe.task_description}}</textarea>
+            <label for="icon_telephone">Task Description</label>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="input-field col s12">
-        <i class="material-icons prefix">today</i>
-        <input id="due_date" name="due_date" type="text" class="datepicker">
-        <label for="icon_prefix">Due Date</label>
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">today</i>
+            <input id="due_date" name="due_date" type="text" class="datepicker">
+            <label for="icon_prefix">Due Date</label>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="switch">
-        <label>
+    <div class="row">
+        <div class="switch">
+            <label>
                   <input id="is_urgent" name="is_urgent" type="checkbox">
                   <span class="lever"></span>
                   Is Urgent
                 </label>
+        </div>
     </div>
-</div>

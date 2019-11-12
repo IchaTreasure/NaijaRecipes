@@ -20,15 +20,33 @@
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
-                    <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
                     <li><a href="{{url_for('add_recipes')}}">Add Recipe</a></li>
+                    <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
                     <li><a href="{{url_for('logout')}}">Sign Out</a></li>
+                    <li>
+                        <form method=POST action="{{ url_for('search_recipes') }}">
+                            <div class="input-field col s3">
+                                <i class="material-icons prefix">search</i>
+                                <input id="browse_recipes" name="browse_recipes" type="text">
+                                <label for="icon_prefix">Search Recipes</label>
+                            </div>
+                        </form>
+                    </li>
                 </ul>
                 <ul class="side-nav " id="mobile-demo">
                     <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
-                    <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
                     <li><a href="{{url_for('add_recipes')}}">Add Recipe</a></li>
+                    <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
                     <li><a href="{{url_for('logout')}}">Sign Out</a></li>
+                    <li>
+                        <form method=POST action="{{ url_for('search_recipes') }}">
+                            <div class="input-field col s3">
+                                <i class="material-icons prefix">search</i>
+                                <input id="browse_recipes" name="browse_recipes" type="text">
+                                <label for="icon_prefix">Search Recipes</label>
+                            </div>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -44,19 +62,7 @@
                 <li class="tab"><a href="#test4">Side Dish</a></li>
             </ul>
         </div>
-        <form method=GET action="{{ url_for('search_recipes') }}">
-            <div class="container " style="text-align: center;">
-                <div class="row">
-                    <div class="input-field col s3">
-                        <i class="material-icons prefix">assignment</i>
-                        <input id="browse_recipes" name="browse_recipes" type="text">
-                        <label for="icon_prefix">Browse Recipes</label>
-                        <button type="submit" class="btn btn-primary btn-block">Search</button>
-                    </div>
 
-                </div>
-            </div>
-        </form>
     </div>
 
     <div class="slider grey darken-4">

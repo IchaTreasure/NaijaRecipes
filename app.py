@@ -19,7 +19,8 @@ def index():
         return render_template("recipes.html", Recipies=mongo.db.Recipies.find())
         
     return render_template('index.html')
-    
+
+#https://github.com/PrettyPrinted/mongodb-user-login/blob/master/login_example.py
 @app.route('/login', methods=['POST'])
 def login():
     users = mongo.db.users
@@ -31,7 +32,8 @@ def login():
             return redirect(url_for('index'))
 
     return render_template('failedindex.html')
-
+    
+#https://github.com/PrettyPrinted/mongodb-user-login/blob/master/login_example.py
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
@@ -113,9 +115,9 @@ def get_categories():
     return render_template('categories.html',
                            Recipies=mongo.db.Recipies.find())
 
-@app.route('/search_recipes', methods=['GET'])
+@app.route('/search_recipes', methods=['POST'])
 def search_recipes():
-    return render_template("searchRecipes.html", Recipies=mongo.db.Recipies.find_one({'recipe_title': request.form['browse_recipes']}))
+    return render_template("searchRecipes.html", Recipies=mongo.db.Recipies.find({'recipe_title': request.form['browse_recipes']}))
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'
