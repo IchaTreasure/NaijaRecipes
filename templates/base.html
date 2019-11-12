@@ -5,6 +5,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!--<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+
+
 </head>
 
 <body>
@@ -41,17 +45,17 @@
             </ul>
         </div>
         <form method=GET action="{{ url_for('search_recipes') }}">
-        <div class="container " style="text-align: center;">
-            <div class="row">
-                <div class="input-field col s3">
-                    <i class="material-icons prefix">assignment</i>
-                    <input id="browse_recipes" name="browse_recipes" type="text">
-                    <label for="icon_prefix">Browse Recipes</label>
-                    <button type="submit" class="btn btn-primary btn-block">Search</button>
+            <div class="container " style="text-align: center;">
+                <div class="row">
+                    <div class="input-field col s3">
+                        <i class="material-icons prefix">assignment</i>
+                        <input id="browse_recipes" name="browse_recipes" type="text">
+                        <label for="icon_prefix">Browse Recipes</label>
+                        <button type="submit" class="btn btn-primary btn-block">Search</button>
+                    </div>
+
                 </div>
-                
             </div>
-        </div>
         </form>
     </div>
 
@@ -153,15 +157,11 @@
             $(".button-collapse").sideNav();
             $('.slider').slider();
             $(".dropdown-button").dropdown();
-        });
 
-        $('.datepicker').pickadate({
-            selectMonths: true, // Creates a dropdown to control month
-            selectYears: 15, // Creates a dropdown of 15 years to control year,
-            today: 'Today',
-            clear: 'Clear',
-            close: 'Ok',
-            closeOnSelect: false // Close upon selecting a date,
+            function disableBack() { window.history.forward(); }
+
+            window.onload = disableBack();
+
         });
     </script>
 </body>

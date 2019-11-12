@@ -10,14 +10,9 @@ load_dotenv()
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
-#app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
 mongo = PyMongo(app)
 
-#@app.route('/')
-#def hello():
-#  return 'Hello World ...again'
-    
 @app.route('/')
 def index():
     if 'username' in session:
@@ -35,7 +30,7 @@ def login():
             session['username'] = request.form['username']
             return redirect(url_for('index'))
 
-    return 'Invalid username/password combination'
+    return render_template('failedindex.html')
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
@@ -49,7 +44,7 @@ def register():
             session['username'] = request.form['username']
             return redirect(url_for('index'))
         
-        return 'That username already exists!'
+        return render_template('failedregister.html')
 
     return render_template('register.html')
 
