@@ -1,4 +1,5 @@
 import os
+import re
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 import bcrypt 
@@ -117,7 +118,8 @@ def get_categories():
 
 @app.route('/search_recipes', methods=['POST'])
 def search_recipes():
-    return render_template("searchRecipes.html", Recipies=mongo.db.Recipies.find({'recipe_title': request.form['browse_recipes']}))
+    regx = re.compile(request.form['browse_recipes'], re.IGNORECASE)
+    return render_template("searchRecipes.html", Recipies=mongo.db.Recipies.find({'recipe_title': regx}))
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'
