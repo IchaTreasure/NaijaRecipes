@@ -9,52 +9,6 @@
 
 <body>
 
-    <header>
-        <nav>
-            <div class="nav-wrapper grey darken-4">
-                <a href="{{url_for('get_recipes')}}" class="brand-logo" Style="margin-left: 10px;">NaijaRecipes</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
-                    <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
-                    <li><a href="{{url_for('add_recipes')}}">Add Recipe</a></li>
-                    <li><a href="{{url_for('logout')}}">Sign Out</a></li>
-                </ul>
-                <ul class="side-nav " id="mobile-demo">
-                    <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
-                    <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
-                    <li><a href="{{url_for('add_recipes')}}">Add Recipe</a></li>
-                    <li><a href="{{url_for('logout')}}">Sign Out</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <div class="container " style="text-align: center;">
-        <div class="nav-content ">
-            <ul class="tabs ">
-                <li class="tab"><a href="{{url_for('get_categories')}}">Appetizer</a></li>
-                <li class="tab"><a href="#test2">Dessert</a></li>
-                <li class="tab"><a href="#test3">Lunch</a></li>
-                <li class="tab"><a href="#test4">Main Dish</a></li>
-                <li class="tab"><a href="#test4">Side Dish</a></li>
-            </ul>
-        </div>
-        <form method=GET action="{{ url_for('search_recipes') }}">
-        <div class="container " style="text-align: center;">
-            <div class="row">
-                <div class="input-field col s3">
-                    <i class="material-icons prefix">assignment</i>
-                    <input id="browse_recipes" name="browse_recipes" type="text">
-                    <label for="icon_prefix">Browse Recipes</label>
-                    <button type="submit" class="btn btn-primary btn-block">Search</button>
-                </div>
-                
-            </div>
-        </div>
-        </form>
-    </div>
-
     <div class="slider grey darken-4">
         <ul class="slides ">
             <li>
@@ -105,24 +59,7 @@
     </div>
 
     <footer class="page-footer grey darken-4">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">NaijaRecipes</h5>
-                    <p class="grey-text text-lighten-4">Easily add-in a short description about your recipe! This can be of any length. Remember, you are trying to sell your recipe!.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Recipe Categories</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Appetizer</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Dessert</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Lunch</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Main Dish</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Side Dish</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
         <div class="footer-copyright" style="text-align: center;">
             <div class="container">
                 © 2019 All Rights Reserved. Developed by TGIStudios
