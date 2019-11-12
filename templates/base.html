@@ -55,11 +55,11 @@
     <div class="container " style="text-align: center;">
         <div class="nav-content ">
             <ul class="tabs ">
-                <li class="tab"><a href="{{url_for('get_categories')}}">Appetizer</a></li>
-                <li class="tab"><a href="#test2">Dessert</a></li>
-                <li class="tab"><a href="#test3">Lunch</a></li>
-                <li class="tab"><a href="#test4">Main Dish</a></li>
-                <li class="tab"><a href="#test4">Side Dish</a></li>
+                <li class="tab"><a href="{{url_for('view_appetizer')}}">Appetizer</a></li>
+                <li class="tab"><a href="{{url_for('view_dessert')}}">Dessert</a></li>
+                <li class="tab"><a href="{{url_for('view_lunch')}}">Lunch</a></li>
+                <li class="tab"><a href="{{url_for('view_maindish')}}">Main Dish</a></li>
+                <li class="tab"><a href="{{url_for('view_sidedish')}}">Side Dish</a></li>
             </ul>
         </div>
 
@@ -163,11 +163,11 @@
             $(".button-collapse").sideNav();
             $('.slider').slider();
             $(".dropdown-button").dropdown();
-
+            
             function disableBack() { window.history.forward(); }
 
             window.onload = disableBack();
-
+            
         });
     </script>
 </body>
