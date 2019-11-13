@@ -15,9 +15,6 @@
         <div>
             <span>Number of Serving: {{task.number_of_servings}}</span>
         </div>
-        <div>
-            <img class="materialboxed" data-caption="A picture of a way with a group of trees in a park" width="250" src="{{task.food_pic}}">
-        </div>
 
         <div Style="padding: 5px;">
             <a href="{{url_for('delete_recipes', recipes_id=task._id)}}" class="waves-effect waves-light btn btn_small grey darken-4" Style="margin-bottom: 5px;"><i class="material-icons right">clear</i>Delete</a>

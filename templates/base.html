@@ -14,12 +14,22 @@
 <body>
 
     <header>
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="{{url_for('view_appetizer')}}">Appetizer</a></li>
+            <li><a href="{{url_for('view_dessert')}}">Dessert</a></li>
+            <li><a href="{{url_for('view_lunch')}}">Lunch</a></li>
+            <li><a href="{{url_for('view_maindish')}}">Main Dish</a></li>
+            <li><a href="{{url_for('view_sidedish')}}">Side Dish</a></li>
+        </ul>
         <nav>
             <div class="nav-wrapper grey darken-4">
                 <a href="{{url_for('get_recipes')}}" class="brand-logo" Style="margin-left: 10px;">NaijaRecipes</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
+                    <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Recipe Categories<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a href="{{url_for('add_recipes')}}">Add Recipe</a></li>
                     <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
                     <li><a href="{{url_for('logout')}}">Sign Out</a></li>
@@ -34,10 +44,15 @@
                     </li>
                 </ul>
                 <ul class="side-nav " id="mobile-demo">
-                    <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
-                    <li><a href="{{url_for('add_recipes')}}">Add Recipe</a></li>
-                    <li><a href="{{url_for('contact_Us')}}">Contact Us</a></li>
-                    <li><a href="{{url_for('logout')}}">Sign Out</a></li>
+                    <li><a href="{{url_for('get_recipes')}}"><b>All Recipes</b></a></li>
+                    <li><a href="{{url_for('view_appetizer')}}"><em>Appetizer</em></a></li>
+                    <li><a href="{{url_for('view_dessert')}}"><em>Dessert</em></a></li>
+                    <li><a href="{{url_for('view_lunch')}}"><em>Lunch</em></a></li>
+                    <li><a href="{{url_for('view_maindish')}}"><em>Main Dish</em></a></li>
+                    <li><a href="{{url_for('view_sidedish')}}"><em>Side Dish</em></a></li>
+                    <li><a href="{{url_for('add_recipes')}}"><b>Add Recipe</b></a></li>
+                    <li><a href="{{url_for('contact_Us')}}"><b>Contact Us</b></a></li>
+                    <li><a href="{{url_for('logout')}}"><b>Sign Out</b></a></li>
                     <li>
                         <form method=POST action="{{ url_for('search_recipes') }}">
                             <div class="input-field col s3">
@@ -51,19 +66,6 @@
             </div>
         </nav>
     </header>
-
-    <div class="container " style="text-align: center;">
-        <div class="nav-content ">
-            <ul class="tabs ">
-                <li class="tab"><a href="{{url_for('view_appetizer')}}">Appetizer</a></li>
-                <li class="tab"><a href="{{url_for('view_dessert')}}">Dessert</a></li>
-                <li class="tab"><a href="{{url_for('view_lunch')}}">Lunch</a></li>
-                <li class="tab"><a href="{{url_for('view_maindish')}}">Main Dish</a></li>
-                <li class="tab"><a href="{{url_for('view_sidedish')}}">Side Dish</a></li>
-            </ul>
-        </div>
-
-    </div>
 
     <div class="slider grey darken-4">
         <ul class="slides ">
@@ -163,11 +165,11 @@
             $(".button-collapse").sideNav();
             $('.slider').slider();
             $(".dropdown-button").dropdown();
-            
+
             function disableBack() { window.history.forward(); }
 
             window.onload = disableBack();
-            
+
         });
     </script>
 </body>
