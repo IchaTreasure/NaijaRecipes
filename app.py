@@ -1,5 +1,7 @@
 import os
 import re
+import boto3
+from botocore.client import Config
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 import bcrypt
@@ -7,6 +9,23 @@ from bson.objectid import ObjectId
 
 from dotenv import load_dotenv
 load_dotenv()
+
+ACCESS_KEY_ID = os.environ.get('ACCESS_KEY_ID')
+ACCESS_SECRET_KEY = os.environ.get('ACCESS_SECRET_KEY')
+BUCKET_NAME = os.environ.get('BUCKET_NAME')
+
+data = open('static/images/food.jpg', 'rb')
+
+s3 = boto3.resource(
+    's3',
+    aws_access_key_id=ACCESS_KEY_ID,
+    aws_secret_access_key=ACCESS_SECRET_KEY,
+    config=Config(signature_version='s3v4')
+)
+s3.Bucket(BUCKET_NAME).put_object(Key='food.jpg', Body=data)
+
+print ("Done")
+
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
@@ -128,45 +147,12 @@ def contact_Us():
     return render_template("contactUs.html")
 
 
-@app.route('/get_categories')
-def get_categories():
-    return render_template('categories.html',
-                           Recipies=mongo.db.Recipies.find())
-
-
-@app.route('/view_appetizer')
-def view_appetizer():
-    return render_template('appetizer.html',
+@app.route('/view_category')
+def view_category():
+    cat = request.args.get('cat')
+    return render_template('getCat.html',
                            Recipies=mongo.db.Recipies.find
-                           ({'category_name': 'Appetizer'}))
-
-
-@app.route('/view_dessert')
-def view_dessert():
-    return render_template('dessert.html',
-                           Recipies=mongo.db.Recipies.find
-                           ({'category_name': 'Dessert'}))
-
-
-@app.route('/view_lunch')
-def view_lunch():
-    return render_template('lunch.html',
-                           Recipies=mongo.db.Recipies.find
-                           ({'category_name': 'Lunch'}))
-
-
-@app.route('/view_maindish')
-def view_maindish():
-    return render_template('maindish.html',
-                           Recipies=mongo.db.Recipies.find
-                           ({'category_name': 'Main Dish'}))
-
-
-@app.route('/view_sidedish')
-def view_sidedish():
-    return render_template('sidedish.html',
-                           Recipies=mongo.db.Recipies.find
-                           ({'category_name': 'Side Dish'}))
+                           ({'category_name': cat}))
 
 
 @app.route('/search_recipes', methods=['POST'])

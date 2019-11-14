@@ -16,11 +16,11 @@
     <header>
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="{{url_for('view_appetizer')}}">Appetizer</a></li>
-            <li><a href="{{url_for('view_dessert')}}">Dessert</a></li>
-            <li><a href="{{url_for('view_lunch')}}">Lunch</a></li>
-            <li><a href="{{url_for('view_maindish')}}">Main Dish</a></li>
-            <li><a href="{{url_for('view_sidedish')}}">Side Dish</a></li>
+            <li><a href="{{url_for('view_category')}}?cat=Appetizer">Appetizer</a></li>
+            <li><a href="{{url_for('view_category')}}?cat=Dessert">Dessert</a></li>
+            <li><a href="{{url_for('view_category')}}?cat=Lunch">Lunch</a></li>
+            <li><a href="{{url_for('view_category')}}?cat=Main Dish">Main Dish</a></li>
+            <li><a href="{{url_for('view_category')}}?cat=Side Dish">Side Dish</a></li>
         </ul>
         <nav>
             <div class="nav-wrapper grey darken-4">
@@ -45,11 +45,11 @@
                 </ul>
                 <ul class="side-nav " id="mobile-demo">
                     <li><a href="{{url_for('get_recipes')}}"><b>All Recipes</b></a></li>
-                    <li><a href="{{url_for('view_appetizer')}}"><em>Appetizer</em></a></li>
-                    <li><a href="{{url_for('view_dessert')}}"><em>Dessert</em></a></li>
-                    <li><a href="{{url_for('view_lunch')}}"><em>Lunch</em></a></li>
-                    <li><a href="{{url_for('view_maindish')}}"><em>Main Dish</em></a></li>
-                    <li><a href="{{url_for('view_sidedish')}}"><em>Side Dish</em></a></li>
+                    <li><a href="{{url_for('view_category')}}?cat=Appetizer"><em>Appetizer</em></a></li>
+                    <li><a href="{{url_for('view_category')}}?cat=Dessert"><em>Dessert</em></a></li>
+                    <li><a href="{{url_for('view_category')}}?cat=Lunch"><em>Lunch</em></a></li>
+                    <li><a href="{{url_for('view_category')}}?cat=Main Dish"><em>Main Dish</em></a></li>
+                    <li><a href="{{url_for('view_category')}}?cat=Side Dish"><em>Side Dish</em></a></li>
                     <li><a href="{{url_for('add_recipes')}}"><b>Add Recipe</b></a></li>
                     <li><a href="{{url_for('contact_Us')}}"><b>Contact Us</b></a></li>
                     <li><a href="{{url_for('logout')}}"><b>Sign Out</b></a></li>
@@ -127,11 +127,11 @@
                     <h5 class="white-text">Recipe Categories</h5>
                     <ul>
                       
-                        <li><a class="grey-text text-lighten-3" href="{{url_for('view_appetizer')}}">Appetizer</a></li>
-                        <li><a class="grey-text text-lighten-3" href="{{url_for('view_dessert')}}">Dessert</a></li>
-                        <li><a class="grey-text text-lighten-3" href="{{url_for('view_lunch')}}">Lunch</a></li>
-                        <li><a class="grey-text text-lighten-3" href="{{url_for('view_maindish')}}">Main Dish</a></li>
-                        <li><a class="grey-text text-lighten-3" href="{{url_for('view_sidedish')}}">Side Dish</a></li>
+                        <li><a class="grey-text text-lighten-3" href="{{url_for('view_category')}}?cat=Appetizer">Appetizer</a></li>
+                        <li><a class="grey-text text-lighten-3" href="{{url_for('view_category')}}?cat=Dessert">Dessert</a></li>
+                        <li><a class="grey-text text-lighten-3" href="{{url_for('view_category')}}?cat=Lunch">Lunch</a></li>
+                        <li><a class="grey-text text-lighten-3" href="{{url_for('view_category')}}?cat=Main Dish">Main Dish</a></li>
+                        <li><a class="grey-text text-lighten-3" href="{{url_for('view_category')}}?cat=Side Dish">Side Dish</a></li>
                     </ul>
                 </div>
             </div>
