@@ -6,6 +6,7 @@ from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 import bcrypt
 from bson.objectid import ObjectId
+from werkzeug import secure_filename
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -13,18 +14,6 @@ load_dotenv()
 ACCESS_KEY_ID = os.environ.get('ACCESS_KEY_ID')
 ACCESS_SECRET_KEY = os.environ.get('ACCESS_SECRET_KEY')
 BUCKET_NAME = os.environ.get('BUCKET_NAME')
-
-data = open('static/images/food.jpg', 'rb')
-
-s3 = boto3.resource(
-    's3',
-    aws_access_key_id=ACCESS_KEY_ID,
-    aws_secret_access_key=ACCESS_SECRET_KEY,
-    config=Config(signature_version='s3v4')
-)
-s3.Bucket(BUCKET_NAME).put_object(Key='food.jpg', Body=data)
-
-print ("Done")
 
 
 app = Flask(__name__)
@@ -101,10 +90,23 @@ def add_recipes():
 
 @app.route('/insert_recipes', methods=['POST'])
 def insert_recipes():
+    
+    f = request.files['file']
+    
+    f.save(secure_filename(f.filename))
+
+    s3 = boto3.resource('s3',
+    aws_access_key_id=ACCESS_KEY_ID,
+    aws_secret_access_key=ACCESS_SECRET_KEY,
+    config=Config(signature_version='s3v4')
+    )
+    
+    s3.Bucket(BUCKET_NAME).put_object(Key='f.jpg')
+
     Recipies = mongo.db.Recipies
     Recipies.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))
-
+    
 
 @app.route('/edit_recipes/<recipes_id>')
 def edit_recipes(recipes_id):

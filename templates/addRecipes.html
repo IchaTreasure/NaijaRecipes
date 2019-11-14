@@ -4,7 +4,7 @@
 <div class="row" Style="padding: 20px;">
 
     <h4 Style="padding: 10px;">Your Information</h4>
-    <form action="{{ url_for('insert_recipes') }}" method="POST" class="col s12">
+    <form action="{{ url_for('insert_recipes') }}" method="POST" class="col s12" enctype="multipart/form-data">
 
         <!-- Recipe type input -->
         <div class="row">
@@ -81,8 +81,8 @@
         <div class="mb-5 col-8">
             <img src="https://www.industriehof.com/images/social/xing-24x24.png" id="img-preview" />
             <div class="custom-file">
-                <input type="file" class="custom-file-input" id="food_pic">
-                <label class="custom-file-label" for="recipe_image">Choose image</label>
+                <input type="file" class="custom-file-input" name = "file">
+                <label class="custom-file-label">Choose image</label>
             </div>
         </div>
 
