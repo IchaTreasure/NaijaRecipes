@@ -20,35 +20,26 @@ When a user clicks the view button to view a recipe they have the option of eith
 
 <p> As a new user I'm able to do the following:</p>
 
-<p> Register/ sign up to use the services.</p>
-<p> Go to the All Recipes page where all recipes will be shown. The user is also able to search for a recipe on the nav bar</p>
-<p> The user is able to add a new recipe, by clicking on the Add Recipe.</p>
-<p> The user is able to search for a recipe with the help of the search form on the navbar</p>
-<p> The user is able to see a single recipe by clicking on the View Recipe botton on the recipe cards</p>
-<p> The user is able to edit a recipe once the sinlge recipe is displayed</p>
-<p> The user is able to remove a recipe.</p>
+<p>• Register/ sign up to use the services.</p>
+<p>• Go to the All Recipes page where all recipes will be shown. The user is also able to search for a recipe on the nav bar</p>
+<p>• The user is able to add a new recipe, by clicking on the Add Recipe.</p>
+<p>• The user is able to search for a recipe with the help of the search form on the navbar</p>
+<p>• The user is able to see a single recipe by clicking on the View Recipe botton on the recipe cards</p>
+<p>• The user is able to edit a recipe once the sinlge recipe is displayed</p>
+<p>• The user is able to remove a recipe.</p>
 
 <h2>Features</h2>
-<p>User Registration: User's who wish to submit their work to the site will have to register first. This is done using Flask, Bcrypt and MongoDB as the database for users.</p>
-
-<p>User Login: As above. Registered users must login before attempting to share work on the site.</p>
-
-<p>Messages indicating if Username is already taken at registration, or incorrect username/password at login.</p>
-
-<p>User Logout: Enables the user to end the session.</p>
-
-<p>Search functionality: To search for recipes by name.</p>
-
-<p>Recipes by categories: 5 main recipe categories</p>
-
+<p>• User Registration: User's who wish to submit their work to the site will have to register first. This is done using Flask, Bcrypt and MongoDB as the database for users.</p>
+<p>• User Login: As above. Registered users must login before attempting to share work on the site.</p>
+<p>• Messages indicating if Username is already taken at registration, or incorrect username/password at login.</p>
+<p>• User Logout: Enables the user to end the session.</p>
+<p>• Search functionality: To search for recipes by name.</p>
+<p>• Recipes by categories: 5 main recipe categories</p>
 
 <h2> Future features </h2>
-
-<p>Comments section: Give other users the ability to comment/critique on others work.</p>
-
-<p>Rate recipes: Rate the recipes with a star rating system.</p>
-
-<p>Add pictures </p>
+<p>• Comments section: Give other users the ability to comment/critique on others work.</p>
+<p>• Rate recipes: Rate the recipes with a star rating system.</p>
+<p>• Add pictures </p>
 
 <h2>Tools/Technologies</h2>
 <h3>AWS Cloud9</h3>
@@ -80,12 +71,12 @@ When a user clicks the view button to view a recipe they have the option of eith
 
 <h3>Testing</h3>
 <hr>
-<p>The HTML and CSS coding was tested by using the W3C Mark Validator Service by direct input.</p>
-<p>To test the responsiveness of the website in phones, tablets, and desktops screens, I have used the Chrome Developer Tools.</p>
-<p>The JavaScript files were tested using https://jslint.com/ by direct input of the files on the validator.</p>
-<p>The Python code tested on pep8 </p>
-<p>The web app functionality, tested on multiple browers such as Chrome, Edge, Safari and Firefox.</p>
-<p>The web application has been tested by some of my friends with the question if the app was clear, easy to use and understandable.</p>
+<p>• The HTML and CSS coding was tested by using the W3C Mark Validator Service by direct input.</p>
+<p>• To test the responsiveness of the website in phones, tablets, and desktops screens, I have used the Chrome Developer Tools.</p>
+<p>• The JavaScript files were tested using https://jslint.com/ by direct input of the files on the validator.</p>
+<p>• The Python code tested on pep8 </p>
+<p>• The web app functionality, tested on multiple browers such as Chrome, Edge, Safari and Firefox.</p>
+<p>• The web application has been tested by some of my friends with the question if the app was clear, easy to use and understandable.</p>
 
 <h2>Bugs</h2>
 <hr>
@@ -93,30 +84,30 @@ When a user clicks the view button to view a recipe they have the option of eith
 
 <h2>Deployment</h2>
 <hr>
-<p>Modules to be installed</p>
+<h4>Modules to be installed</h4>
 <p>• os</p>
 <p>• Flask - render_template, redirect, request, url_for, session, flash</p>
 <p>• PyMongo</p>
 <p>• flask_pymongo</p>
 <p>• Bcrypt</p>
 <p>• bson.objectid - ObjectId</p>
-<p> Creating a requirements.txt and Procfile</p>
+<h4> Creating a requirements.txt and Procfile</h4>
 <p>• In CLI input pip3 freeze --local > requirements.txt . This should generate a file with all tools listed and they're version number.</p>
 <p>• Procfile - in CLI input echo web: python app.py > Procfile</p>
-<p> Creating an app on Heroku</p>
+<h4> Creating an app on Heroku</h4>
 <p>• Create account with Heroku.</p>
 <p>• Select "New" then "Create new app"</p>
 <p>• Input app-name and region (Europe in this case)</p>
 <p>• Follow steps for "Deploy using Heroku Git" (push from CLI, described below)</p>
 <p>• Set Config vars (described below)
-<p> Push to Heroku
+<h4> Push to Heroku </h4>
 <p>• First, ensure requirements.txt and Procfile are configured.</p>
 <p>• In temrinal window, run "heroku login"
 <p>• Press and key to be redirected to Heroku Login page, select "Login in to Heroku CLI"</p>
 <p>• Return back to Terminal, Herok ushould be logged in, run the command "git push heroku master".</p>
 <p>• Once successfully completed, " https://share-a-script.herokuapp.com/ deployed to Heroku" will be available in terminal window, you can follow this link to view your application.</p>
-<p> Set config vars on Heroku</p>
-<p>• From your app dashboard, select settings</p>.
+<h4> Set config vars on Heroku</h4>
+<p>• From your app dashboard, select settings</p>
 <p>• In settings, select "Reveal config vars"</p>
 <p>• The following need to be configured;</p>
 <p>• I.P : 0.0.0.0</p>
