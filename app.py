@@ -16,11 +16,11 @@ ACCESS_SECRET_KEY = os.environ.get('ACCESS_SECRET_KEY')
 BUCKET_NAME = os.environ.get('BUCKET_NAME')
 
 s3 = boto3.resource('s3',
-    aws_access_key_id=ACCESS_KEY_ID,
-    aws_secret_access_key=ACCESS_SECRET_KEY,
-    config=Config(signature_version='s3v4')
-    )
- 
+                    aws_access_key_id=ACCESS_KEY_ID,
+                    aws_secret_access_key=ACCESS_SECRET_KEY,
+                    config=Config(signature_version='s3v4')
+                    )
+
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
@@ -93,6 +93,7 @@ def add_recipes():
     return render_template("addRecipes.html",
                            categories=mongo.db.categories.find())
 
+
 @app.route('/insert_recipes', methods=['POST'])
 def insert_recipes():
     Recipies = mongo.db.Recipies
@@ -100,7 +101,6 @@ def insert_recipes():
     Recipies.insert_one(recipe_dict)
     return redirect(url_for('get_recipes'))
 
-    
 
 @app.route('/edit_recipes/<recipes_id>')
 def edit_recipes(recipes_id):
@@ -121,8 +121,7 @@ def update_recipes(recipes_id):
         'cook_time': request.form.get('cook_time'),
         'number_of_servings': request.form.get('number_of_servings'),
         'ingredients': request.form.get('ingredients'),
-        'instructions': request.form.get('instructions'),
-        
+        'instructions': request.form.get('instructions')
     })
     return redirect(url_for('get_recipes'))
 
