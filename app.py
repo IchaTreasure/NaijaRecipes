@@ -88,16 +88,31 @@ def add_recipes():
     return render_template("addRecipes.html",
                            categories=mongo.db.categories.find())
 
-
 @app.route('/insert_recipes', methods=['POST'])
 def insert_recipes():
     
+    f = request.files['file']
+    
+    f.save(secure_filename(f.filename))
+    filename= secure_filename(f.filename)
+    
+    
+    s3 = boto3.resource('s3',
+    aws_access_key_id=ACCESS_KEY_ID,
+    aws_secret_access_key=ACCESS_SECRET_KEY,
+    config=Config(signature_version='s3v4')
+    )
+    
+    with open( filename, 'rb') as f: 
+ 
+        s3.Bucket(BUCKET_NAME).put_object(Key=filename, Body=f, ACL='public-read')
 
     Recipies = mongo.db.Recipies
     recipe_dict = request.form.to_dict()
-    
+    recipe_dict['image_url'] = "https://naija-recipe.s3.eu-west-2.amazonaws.com/" + filename
     Recipies.insert_one(recipe_dict)
     return redirect(url_for('get_recipes'))
+
     
 
 @app.route('/edit_recipes/<recipes_id>')
