@@ -1,8 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="row">
-
     <div class="col s9" Style="padding: 50px;">
+        <div>
+            <img src="http://naija-recipe.s3.amazonaws.com/food.jpg" alt="food" height="220" width="320">
+        </div>
+        <br>
         <div>
             <h4>{{recipe.recipe_title}}</h4>
         </div>
@@ -10,6 +13,7 @@
         <div>
             <span> <strong>Recipe Category: </strong> {{recipe.category_name}}</span>
         </div>
+        <br>
         <div>
             <span> <strong>Prep Time: </strong> {{recipe.prep_time}}</span>
         </div>
@@ -29,7 +33,11 @@
         <div>
             <span> <strong>Instructions: </strong> {{recipe.instructions}}</span>
         </div>
-        
+        <br>
+        <div Style="padding: 5px;">
+            <a href="{{url_for('delete_recipes', recipes_id=recipe._id)}}" class="waves-effect waves-light btn btn_small grey darken-4" Style="margin-bottom: 5px;"><i class="material-icons right">clear</i>Delete</a>
+            <a href="{{url_for('edit_recipes', recipes_id=recipe._id)}}" class="waves-effect waves-light btn btn_small grey darken-4" Style="margin-bottom: 5px;"><i class="material-icons right">create</i>Edit</a>
+        </div>
     </div>
 </div>
 

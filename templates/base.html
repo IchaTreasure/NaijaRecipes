@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!--<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-
-
 </head>
 
 <body>
-
     <header>
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
@@ -126,7 +122,6 @@
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Recipe Categories</h5>
                     <ul>
-                      
                         <li><a class="grey-text text-lighten-3" href="{{url_for('view_category')}}?cat=Appetizer">Appetizer</a></li>
                         <li><a class="grey-text text-lighten-3" href="{{url_for('view_category')}}?cat=Dessert">Dessert</a></li>
                         <li><a class="grey-text text-lighten-3" href="{{url_for('view_category')}}?cat=Lunch">Lunch</a></li>
@@ -139,19 +134,11 @@
         <div class="footer-copyright" style="text-align: center;">
             <div class="container">
                 © 2019 All Rights Reserved. Developed by TGIStudios
-
                 <ul>
-
                     <a target="_blank" href="https://www.facebook.com/caleb.rex.96"><i class = " fa fa-facebook" aria-hidden="true"></i><span class = "sr-only">Facebook</span></a>
-
-
                     <a target="_blank" href="https://twitter.com/calebrex01"><i class = " fa fa-twitter" aria-hidden="true"></i><span class = "sr-only">Twitter</span></a>
-
-
                     <a target="_blank" href="https://www.instagram.com/caleb.rex01/"><i class = " fa fa-instagram" aria-hidden="true"></i><span class = "sr-only">Instagram</span></a>
-
                     <a target="_blank" href="https://www.youtube.com/channel/UC_B7e65upco510Sio9dZJhg"><i class = " fa fa-youtube" aria-hidden="true"></i><span class = "sr-only">Youtube</span></a>
-
                 </ul>
             </div>
         </div>
@@ -168,9 +155,7 @@
             $(".dropdown-button").dropdown();
 
             function disableBack() { window.history.forward(); }
-
             window.onload = disableBack();
-
         });
     </script>
 </body>

@@ -4,6 +4,10 @@
     {% for task in Recipies %}
     <div class="col s6" Style="padding: 50px;">
         <div>
+            <img src="http://naija-recipe.s3.amazonaws.com/food.jpg" alt="food" height="220" width="320">
+        </div>
+        <br>
+        <div>
             <h4>{{task.recipe_title}}</h4>
         </div>
         <div>
@@ -15,10 +19,7 @@
         <div>
             <span>Number of Serving: {{task.number_of_servings}}</span>
         </div>
-
         <div Style="padding: 5px;">
-            <a href="{{url_for('delete_recipes', recipes_id=task._id)}}" class="waves-effect waves-light btn btn_small grey darken-4" Style="margin-bottom: 5px;"><i class="material-icons right">clear</i>Delete</a>
-            <a href="{{url_for('edit_recipes', recipes_id=task._id)}}" class="waves-effect waves-light btn btn_small grey darken-4" Style="margin-bottom: 5px;"><i class="material-icons right">create</i>Edit</a>
             <a href="{{url_for('view_recipes', recipes_id=task._id)}}" class="waves-effect waves-light btn btn_small grey darken-4" Style="margin-bottom: 5px;"><i class="material-icons right">folder_open</i>View</a>
         </div>
     </div>
