@@ -103,7 +103,7 @@ def insert_recipes():
     config=Config(signature_version='s3v4')
     )
     
-    with open( filename, 'rb') as f: 
+    with open( filename, 'r') as f: 
  
         s3.Bucket(BUCKET_NAME).put_object(Key=filename, Body=f, ACL='public-read')
 
