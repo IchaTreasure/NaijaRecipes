@@ -105,7 +105,7 @@ When a user clicks the view button to view a recipe they have the option of eith
 <p>• In temrinal window, run "heroku login"
 <p>• Press and key to be redirected to Heroku Login page, select "Login in to Heroku CLI"</p>
 <p>• Return back to Terminal, Herok ushould be logged in, run the command "git push heroku master".</p>
-<p>• Once successfully completed, " https://share-a-script.herokuapp.com/ deployed to Heroku" will be available in terminal window, you can follow this link to view your application.</p>
+
 <h4> Set config vars on Heroku</h4>
 <p>• From your app dashboard, select settings</p>
 <p>• In settings, select "Reveal config vars"</p>
