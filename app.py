@@ -95,19 +95,8 @@ def add_recipes():
 
 @app.route('/insert_recipes', methods=['POST'])
 def insert_recipes():
-    
-    f = request.files['file']
-    
-    f.save(secure_filename(f.filename))
-    filename= secure_filename(f.filename)
-    
-    with open( filename, 'rb')  as f:
-    
-     s3.Bucket(BUCKET_NAME).put_object(Key=filename, Body=f, ACL='public-read')
-
     Recipies = mongo.db.Recipies
     recipe_dict = request.form.to_dict()
-    recipe_dict['image_url'] = "https://naija-recipe.s3.eu-west-2.amazonaws.com/" + filename
     Recipies.insert_one(recipe_dict)
     return redirect(url_for('get_recipes'))
 

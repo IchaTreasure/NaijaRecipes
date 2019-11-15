@@ -1,3 +1,53 @@
+@app.route('/insert_recipes', methods=['POST'])
+def insert_recipes():
+    
+    f = request.files['file']
+    
+    f.save(secure_filename(f.filename))
+    filename= secure_filename(f.filename)
+    
+    with open( filename, 'rb')  as f:
+    
+     s3.Bucket(BUCKET_NAME).put_object(Key=filename, Body=f, ACL='public-read')
+
+    Recipies = mongo.db.Recipies
+    recipe_dict = request.form.to_dict()
+    recipe_dict['image_url'] = "https://naija-recipe.s3.eu-west-2.amazonaws.com/" + filename
+    Recipies.insert_one(recipe_dict)
+    return redirect(url_for('get_recipes'))
+    
+    
+    
+    
+    
+           <div>
+            <img src="{{recipe.image_url}}" alt="." height="220" width="320">
+        </div>
+    
+    
+    
+    
+        <!-- Upload Image for recipe -->
+        <div class="mb-5 col-8">
+            <img src="https://www.industriehof.com/images/social/xing-24x24.png" id="img-preview" />
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name = "file">
+                <label class="custom-file-label">Choose image</label>
+            </div>
+        </div>
+        
+        
+        
+        
+         <div>
+            <img src="{{task.image_url}}" height="220" width="320">
+        </div>
+        <br>
+    
+    
+
+
+
 data = open(f, 'rb')
 
 
