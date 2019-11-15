@@ -102,8 +102,7 @@ def insert_recipes():
     filename= secure_filename(f.filename)
     with open( filename, 'rb') as f: 
  
-    
-        s3.Bucket(BUCKET_NAME).put_object(Key=filename, Body=f, ACL='public-read')
+     s3.Bucket(BUCKET_NAME).put_object(Key=filename, Body=f)
 
     Recipies = mongo.db.Recipies
     recipe_dict = request.form.to_dict()
