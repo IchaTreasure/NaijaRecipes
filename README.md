@@ -79,46 +79,50 @@ When a user clicks the view button to view a recipe they have the option of eith
 <p>• https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js</p>
 
 <h3>Testing</h3>
+<hr>
 <p>The HTML and CSS coding was tested by using the W3C Mark Validator Service by direct input.</p>
 <p>To test the responsiveness of the website in phones, tablets, and desktops screens, I have used the Chrome Developer Tools.</p>
 <p>The JavaScript files were tested using https://jslint.com/ by direct input of the files on the validator.</p>
-<p>The game functionality, tested on multiple browers such as Chrome, Edge, Safari and Firefox.</p>
-<p>The game has been tested by some of my friends with the question if the game was clear, easy to use and understandable.</p>
+<p>The Python code tested on pep8 </p>
+<p>The web app functionality, tested on multiple browers such as Chrome, Edge, Safari and Firefox.</p>
+<p>The web application has been tested by some of my friends with the question if the app was clear, easy to use and understandable.</p>
 
 <h2>Bugs</h2>
-<p>Had some issues with the re-sizing of the tiles on smaller devices. Since these kind of games are not made for small mobile devices, I kept iPad size in mind as the smallest easy accesible play-size</p>
+<hr>
+<p>Had some issues with adding pictures into s3 bucket and calling the files into my html pages</p>
 
 <h2>Deployment</h2>
-<p> Modules to be installed</p>
-<p> os</p>
-<p> Flask - render_template, redirect, request, url_for, session, flash</p>
-<p> PyMongo</p>
-<p> flask_pymongo</p>
-<p> Bcrypt</p>
-<p> bson.objectid - ObjectId</p>
+<hr>
+<p>Modules to be installed</p>
+<p>• os</p>
+<p>• Flask - render_template, redirect, request, url_for, session, flash</p>
+<p>• PyMongo</p>
+<p>• flask_pymongo</p>
+<p>• Bcrypt</p>
+<p>• bson.objectid - ObjectId</p>
 <p> Creating a requirements.txt and Procfile</p>
-<p> In CLI input pip3 freeze --local > requirements.txt . This should generate a file with all tools listed and they're version number.</p>
-<p> Procfile - in CLI input echo web: python app.py > Procfile</p>
+<p>• In CLI input pip3 freeze --local > requirements.txt . This should generate a file with all tools listed and they're version number.</p>
+<p>• Procfile - in CLI input echo web: python app.py > Procfile</p>
 <p> Creating an app on Heroku</p>
-<p> Create account with Heroku.</p>
-<p> Select "New" then "Create new app"</p>
-<p> Input app-name and region (Europe in this case)</p>
-<p> Follow steps for "Deploy using Heroku Git" (push from CLI, described below)</p>
-<p> Set Config vars (described below)
+<p>• Create account with Heroku.</p>
+<p>• Select "New" then "Create new app"</p>
+<p>• Input app-name and region (Europe in this case)</p>
+<p>• Follow steps for "Deploy using Heroku Git" (push from CLI, described below)</p>
+<p>• Set Config vars (described below)
 <p> Push to Heroku
-<p> First, ensure requirements.txt and Procfile are configured.</p>
-<p> In temrinal window, run "heroku login"
-<p> Press and key to be redirected to Heroku Login page, select "Login in to Heroku CLI"</p>
-<p> Return back to Terminal, Herok ushould be logged in, run the command "git push heroku master".</p>
-<p> Once successfully completed, " https://share-a-script.herokuapp.com/ deployed to Heroku" will be available in terminal window, you can follow this link to view your application.</p>
+<p>• First, ensure requirements.txt and Procfile are configured.</p>
+<p>• In temrinal window, run "heroku login"
+<p>• Press and key to be redirected to Heroku Login page, select "Login in to Heroku CLI"</p>
+<p>• Return back to Terminal, Herok ushould be logged in, run the command "git push heroku master".</p>
+<p>• Once successfully completed, " https://share-a-script.herokuapp.com/ deployed to Heroku" will be available in terminal window, you can follow this link to view your application.</p>
 <p> Set config vars on Heroku</p>
-<p> From your app dashboard, select settings</p>.
-<p> In settings, select "Reveal config vars"</p>
-<p> The following need to be configured;</p>
-<p> I.P : 0.0.0.0</p>
-<p> PORT : 5000</p>
-<p> MONGO_URI : mongodb+srv://root:password@clustername-yibrd.mongodb.net/collectionname?retryWrites=true&w=majority</p>
-<p> SECRET_KEY : secret_key</p>
+<p>• From your app dashboard, select settings</p>.
+<p>• In settings, select "Reveal config vars"</p>
+<p>• The following need to be configured;</p>
+<p>• I.P : 0.0.0.0</p>
+<p>• PORT : 5000</p>
+<p>• MONGO_URI : mongodb+srv://root:password@clustername-yibrd.mongodb.net/collectionname?retryWrites=true&w=majority</p>
+<p>• SECRET_KEY : secret_key</p>
 
 <p>The repository can be found on: https://github.com/IchaTreasure/NaijaRecipes</p>
 
