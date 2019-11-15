@@ -131,7 +131,8 @@ def update_recipes(recipes_id):
         'cook_time': request.form.get('cook_time'),
         'number_of_servings': request.form.get('number_of_servings'),
         'ingredients': request.form.get('ingredients'),
-        'instructions': request.form.get('instructions')
+        'instructions': request.form.get('instructions'),
+        
     })
     return redirect(url_for('get_recipes'))
 
